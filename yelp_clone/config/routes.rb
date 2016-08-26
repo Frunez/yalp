@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "restaurants#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # devise_scope :user do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root "restaurants#index"
 
 
 get 'restaurants' => 'restaurants#index'

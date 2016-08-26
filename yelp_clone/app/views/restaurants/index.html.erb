@@ -11,7 +11,7 @@
           <% restaurant.reviews.all.each do |r| %>
             <li id="<%= r.id %>">
               <%= r.thoughts %>
-              👍 <%= r.endorsements.count %> - <%= link_to 'Endorse', review_endorsements_path(r), method: :post %>
+              👍 <span class="endorsements_count"><%= r.endorsements.count %></span> - <%= link_to 'Endorse', review_endorsements_path(r), class: "endorsements-link" %>
               <%= link_to 'Delete review', review_path(r), method: :delete %>
             </li>
           <% end %>

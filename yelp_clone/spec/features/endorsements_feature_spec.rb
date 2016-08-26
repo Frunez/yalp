@@ -9,7 +9,7 @@ feature 'endorsing reviews' do
     @second_review = Review.last
   end
 
-  scenario 'a user can endorse a review, which updates the endorsement count' do
+  scenario 'a user can endorse a review, which updates the endorsement count', js: true do
     visit '/restaurants'
     within "ul" do
       click_link 'Endorse', match: :first

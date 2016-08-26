@@ -35,14 +35,24 @@ feature 'restaurants' do
   end
 
   context 'creating restaurants' do
-
-    scenario 'prompt user to fill out a form, then displays the new restaurant' do
+    before do
       visit '/restaurants'
       click_link 'Add a restaurant'
       fill_in 'Name',  with: 'KFC'
+      click_button 'Choose File'
+      page.attach_file('restaurant[image]', Rails.root + 'spec/fixtures/kfc.jpg')
+      p Rails.root + 'spec/Fixtures/Snow.jpg'
       click_button 'Create Restaurant'
+    end
+
+    scenario 'prompt user to fill out a form, then displays the new restaurant' do
       expect(page).to have_content 'KFC'
       expect(current_path).to eq '/restaurants'
+    end
+
+    scenario 'restaurant uploads with image when created' do
+      visit '/restaurants'
+      expect(page).to have_content("kfc.jpg")
     end
 
   end

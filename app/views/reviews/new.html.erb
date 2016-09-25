@@ -1,9 +1,9 @@
 <div class="body">
 <%= form_for [@restaurant, @review] do |f| %>
-  <%= f.label :thoughts %>
-  <%= f.text_area :thoughts%>
-  <%= f.label :rating%>
-  <%= f.select :rating, (1..5) %>
-  <%= f.submit 'Leave Review'%>
+  <%= f.label :thoughts, :class => 'field' %><br>
+  <%= f.text_area :thoughts, :class => 'input'%><br>
+  <%= f.label :rating, :class => 'field' %><br>
+  <%= f.select :rating, (1..5), :class => 'input' %><br>
+  <%= f.submit 'Leave Review', :class => 'field' %>
 <% end %>
 </div>

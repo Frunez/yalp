@@ -56,3 +56,6 @@ group :test do
   gem 'poltergeist'
   gem 'database_cleaner'
 end
+
+gem 'rails_12factor', group: :production
+ruby '2.3.0'

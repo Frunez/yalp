@@ -7,14 +7,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= console if ENV["RAILS_ENV"] == 'development' %>
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-  <% end %>
+<body class="layout">
+  <div class="nav-bar">
+    <ul>
+        <li class="home"><%= link_to "YALP", root_path %></li>
+      <%= console if ENV["RAILS_ENV"] == 'development' %>
+      <% if user_signed_in? %>
+        <li class="sign"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li class="sign"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="sign"><%= link_to "Sign up", new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
 
 <p class="notice">
   <%= notice %>

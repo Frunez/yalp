@@ -13,6 +13,124 @@
  *= require_tree .
  *= require_self
  */
+
+.review_title {
+  font-weight: bold;
+}
+
 .field_with_errors {
   background-color: orange;
+}
+
+.name a {
+  border-width: 10px;
+  border-radius: 15px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: white;
+  background-color: rgb(50, 100, 200);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.name a:hover {s
+  background-color: rgb(50, 60, 200);
+}
+
+.body {
+  margin-top: 50px;
+}
+
+.nav-bar {
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(30, 30, 30);
+}
+
+li {
+
+}
+
+.nav-bar li a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+    width: 80px;
+    color: white;
+    float: right;
+    text-decoration: none;
+}
+
+.sign a:hover {
+  background-color: rgb(0, 0, 205);
+}
+
+.home {
+  font-family: Verdana;
+  border-right-style: solid;
+  border-color: white;
+  border-bottom-right-radius: 20px;
+  font-weight: bolder;
+  float: left;
+  background-color: rgb(50, 100, 200);
+}
+
+.home:hover {
+  background-color: rgb(50, 100, 200);
+}
+
+.new {
+  float: right;
+}
+
+.endorsements_count {
+  padding: 2px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgb(50, 100, 200);
+}
+
+.remove {
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.review {
+  list-style-type: none;
+}
+
+.review a {
+  -webkit-border-radius: 28;
+ -moz-border-radius: 28;
+ border-radius: 28px;
+ font-family: Courier New;
+ color: #ffffff;
+ font-size: 15px;
+ background: rgb(50, 100, 200);
+ padding: 1px 5px 0px 6px;
+ text-decoration: none;
+}
+
+.review a:hover {
+  background: rgb(50, 100, 200);
+  background-image: -webkit-linear-gradient(top, rgb(50, 100, 200), #00a6ff);
+  background-image: -moz-linear-gradient(top, rgb(50, 100, 200), #00a6ff);
+  background-image: -ms-linear-gradient(top, rgb(50, 100, 200), #00a6ff);
+  background-image: -o-linear-gradient(top, rgb(50, 100, 200), #00a6ff);
+  background-image: linear-gradient(to bottom, rgb(50, 100, 200), #00a6ff);
+  text-decoration: none;
 }

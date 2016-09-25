@@ -1,3 +1,4 @@
+<div class="body">
 <%= form_for [@restaurant, @review] do |f| %>
   <%= f.label :thoughts %>
   <%= f.text_area :thoughts%>
@@ -5,3 +6,4 @@
   <%= f.select :rating, (1..5) %>
   <%= f.submit 'Leave Review'%>
 <% end %>
+</div>

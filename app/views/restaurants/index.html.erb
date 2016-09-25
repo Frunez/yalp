@@ -1,32 +1,36 @@
+<div class="body">
+<a href='<%= new_restaurant_path %>'>Add a restaurant</a>
 <% if @restaurants.any? %>
   <% @restaurants.each do |restaurant| %>
-      <%= image_tag restaurant.image.url(:thumb) %>
-      <h1><%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
-
+      <h1 class="name"> <%= image_tag restaurant.image.url(:thumb) %>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %></h1>
         <p>
           <%= restaurant.description %>
         </p>
         <ul>
-          <h3>Reviews</h3>
+          <div class="review_title">Reviews</div>
           Average rating: <%= star_rating(restaurant.average_rating) %>
           <% restaurant.reviews.all.each do |r| %>
             <li id="<%= r.id %>">
               <%= r.thoughts %>
-              👍 <span class="endorsements_count"><%= r.endorsements.count %></span> - <%= link_to 'Endorse', review_endorsements_path(r), class: "endorsements-link" %>
-              <%= link_to 'Delete review', review_path(r), method: :delete %>
+              <%= link_to '👍', review_endorsements_path(r), class: "endorsements-link" %>
+              <span class="endorsements_count remove"><%= r.endorsements.count %></span> -
+              <%= link_to 'remove', review_path(r), class: "remove", method: :delete %>
             </li>
           <% end %>
         </ul>
+    <ul class="review">
+      <br>
+      <li><%= link_to "Review", new_restaurant_review_path(restaurant) %></li>
+      <li><%= link_to "Edit", edit_restaurant_path(restaurant) %></li>
+      <li><%= link_to "Delete", restaurant_path(restaurant), method: :delete %></li>
+      <br>
+    </ul>
 
-        <br>
-        <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
-      <br>
-      <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)  %>
-      <br>
-      <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
   <% end %>
 <% else %>
   <h1>No restaurants yet</h1>
 <% end %>
 <hr>
-<a href='<%= new_restaurant_path %>'>Add a restaurant</a>
+
+</div>

@@ -1,3 +1,5 @@
+<div class="body">
+
 <% if @restaurant.errors.any? %>
   <section id="errors">
     <h2> <%= pluralize(@restaurant.errors.count, "error") %> prohibited this resturant from being saved: </h2>
@@ -10,3 +12,4 @@
 <% end %>
 
 <%= render "form" %>
+</div>
